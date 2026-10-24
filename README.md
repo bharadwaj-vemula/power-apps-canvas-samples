@@ -1,11 +1,10 @@
 <div align="center">
 
-# 🎨 Power Apps Canvas Samples
+# ⚡ Power Automate Flow Patterns
 
-**Sanitized, reusable Canvas App samples and Power Fx patterns from real-world projects.**
+**Battle-tested, reusable flow patterns for reliable automation.**
 
-![Power Apps](https://img.shields.io/badge/Power_Apps-742774?style=for-the-badge&logo=powerapps&logoColor=white)
-![Power Fx](https://img.shields.io/badge/Power_Fx-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
+![Power Automate](https://img.shields.io/badge/Power_Automate-0066FF?style=for-the-badge&logo=powerautomate&logoColor=white)
 ![Dataverse](https://img.shields.io/badge/Dataverse-107C10?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Growing-success?style=for-the-badge)
 
@@ -13,42 +12,36 @@
 
 ---
 
-## ✨ What's Inside
+## ✨ Patterns
 
-| 📁 Folder | 📝 Contents |
+| 🧩 Pattern | 📝 Use it when |
 |---|---|
-| `samples/` | Unpacked Canvas Apps, ready to import |
-| `patterns/` | Power Fx techniques: delegation, collections, error handling |
-| `components/` | Reusable component library |
-| `docs/` | Screenshots and guides |
+| Error handling with Scopes | You need try/catch/finally behavior |
+| Retry policies | Calls to APIs fail intermittently |
+| Child flows | Logic is reused across flows |
+| Approvals | A human must sign off before the flow continues |
+| Pagination and batching | You are handling large datasets |
 
-## 🔄 How It Works
+## 🔄 Standard Flow Shape
 
 ```mermaid
 flowchart LR
-    A[Clone repo] --> B[Pick a sample]
-    B --> C[pac canvas pack]
-    C --> D[Import .msapp]
-    D --> E[Customize and ship]
+    A[Trigger] --> B[Scope: Try]
+    B -->|Success| C[Complete]
+    B -->|Failure| D[Scope: Catch]
+    D --> E[Notify and Log]
 ```
 
 ## 🗺️ Roadmap
 
 - [x] Create repository
-- [ ] Starter CRUD app
-- [ ] Delegation patterns
-- [ ] Error handling with `IfError`
-- [ ] Reusable components
-- [ ] Responsive layout sample
+- [ ] Error handling with Scopes
+- [ ] Retry and timeout settings
+- [ ] Child flow template
+- [ ] Approval pattern
+- [ ] Pagination and batch operations
 
-## 🚀 Quick Start
-
-```bash
-git clone https://github.com/bharadwaj-vemula/power-apps-canvas-samples.git
-pac canvas pack --sources ./samples/01-starter-app --msapp ./app.msapp
-```
-
-> 🔒 All samples are sanitized: no client data, tenant IDs, or secrets.
+> 🔒 All patterns are sanitized: no client data, tenant IDs, or secrets.
 
 ---
 
